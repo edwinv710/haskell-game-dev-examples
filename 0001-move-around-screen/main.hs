@@ -10,13 +10,11 @@ data Character =  Character Char Position
 data Tileset   = Tileset [Char]
 data TileMap   = TileMap [[Int]] Tileset
 
-
-
 class Actor a where
-  move     :: a -> Position -> a 
-  position :: a -> Position
-  char     :: a -> Char
-  atPosition    :: a -> Position -> Bool
+  move       :: a -> Position -> a 
+  position   :: a -> Position
+  char       :: a -> Char
+  atPosition :: a -> Position -> Bool
 
 instance Actor Character where
   move     (Character c (x,y)) (xSpeed, ySpeed) = Character c (x+xSpeed, y+ySpeed)
